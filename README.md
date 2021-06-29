@@ -1,3 +1,3 @@
-# RainPrediction_Heruko
+# RainPrediction
 
 
