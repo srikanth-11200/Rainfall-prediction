@@ -1,0 +1,103 @@
+
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+    body{
+      background-color:blanchedalmond;
+      max-width: 1180px;
+      background-image: url("C:\\Users\\Srikanth Narabathoju\\OneDrive\\Documents\\website1\\images\\rain.gif");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    h1{
+      color: white;
+     text-align: center;
+    }
+    input{
+      padding: 10px 15px;
+      margin-left: 30px;
+      margin-bottom: 10px;
+     
+      
+    }
+    button{
+      padding: 10px 15px;
+      margin-left: 30px;
+    }
+    .login{
+      margin: 50px 600px;
+      border: 3px solid white;
+      border-radius: 20px;
+      padding: 5px;
+      width: 300px;
+    }
+    @media only screen and (max-width: 1180px) {
+      .login{
+        margin: 50px 600px;
+       
+      }
+    }
+    @media only screen and (max-width: 998px){
+      .login{
+        margin: 50px 400px;
+      }
+    }
+    @media only screen and (max-width: 768px){
+      .login{
+        margin: 50px 250px;
+      }
+  
+    }
+    @media only screen and (max-width: 480px){
+      .login{
+        margin: 50px 80px;
+      }
+    }
+
+    
+  </style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Rain Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="dew" placeholder="Dew" required="required" /><br>
+        <input type="text" name="humidity" placeholder="Humidity" required="required" /><br>
+		<input type="text" name="thunder" placeholder="Thunder" required="required" /><br>
+		<input type="text" name="windspeed" placeholder="WindSpeed" required="required" /><br>
+        <input type="text" name="temp" placeholder="Temp" required="required" /><br>
+		<input type="text" name="pressure" placeholder="Pressure" required="required" /><br>
+		<input type="text" name="snow" placeholder="Snow" required="required" /><br>
+		
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
+
+
+
+
